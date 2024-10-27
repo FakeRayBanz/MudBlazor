@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace MudBlazor.Docs.Compiler
 {
@@ -20,7 +21,7 @@ namespace MudBlazor.Docs.Compiler
         {
             get
             {
-                var workingPath = Path.GetFullPath(".");
+                var workingPath = Assembly.GetExecutingAssembly().Location;
                 do
                 {
                     workingPath = Path.GetDirectoryName(workingPath);
