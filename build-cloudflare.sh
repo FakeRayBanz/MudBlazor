@@ -5,5 +5,7 @@ chmod +x dotnet-install.sh
 ./dotnet/dotnet --version
 ./dotnet/dotnet workload install wasm-tools
 ./dotnet/dotnet workload list
-./dotnet/dotnet run -c Release --project ./src/MudBlazor.Docs.Compiler/MudBlazor.Docs.Compiler.csproj
+cd ./src/MudBlazor.Docs.Compiler
+./dotnet/dotnet run -c Release
+cd ../../
 ./dotnet/dotnet publish ./src/MudBlazor.Docs.Wasm/MudBlazor.Docs.Wasm.csproj -c Release -o output
